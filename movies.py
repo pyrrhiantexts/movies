@@ -1,6 +1,8 @@
-import requests
 import scrapy
 from pathlib import Path
+from html.parser import HTMLParser
+import sys
+import sqlite3
 
 class MovieSpider(scrapy.Spider):
     name = 'movies'
@@ -20,4 +22,7 @@ class MovieSpider(scrapy.Spider):
         Path(filename).write_bytes(response.body)
         self.log(f'Save file {filename}')
 
-
+def main():
+    #upon program call, spider should scrape and overwrite sqlite database
+    #then print sqlite results, formatted, to terminal
+    #need to set up sqlite3 in another file? pipelines?
