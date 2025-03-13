@@ -1,8 +1,8 @@
 import scrapy
 from pathlib import Path
-from html.parser import HTMLParser
 import sys
 import sqlite3
+import pipelines
 
 class MovieSpider(scrapy.Spider):
     name = 'movies'
